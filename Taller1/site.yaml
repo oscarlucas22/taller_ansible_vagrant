@@ -6,12 +6,16 @@
       apt: update_cache=yes upgrade=yes
       # Instalar paquetes
     - name: "Instalar paquetes con apt"
-      apt: # Aquí tienes que poner lo necesario para instalar git y apache2
+      apt: 
+        name:
+           - git
+           - apache2
+        state: present
       # Copia un fichero a la máquina remota
     - name: "Copiar fichero a la máquina remota"
       copy:
         src: files/foo.conf
-        dest: 
+        dest: /etc
         owner: root
         group: root
         mode: '0644'
@@ -20,7 +24,7 @@
     - name: "Copiar un tamplate a un fichero de la máquina remota"
       template: 
         src: template/index.j2
-        dest: 
+        dest: /var/www/html/index.html
         owner: www-data
         group: www-data
         mode: 0644
