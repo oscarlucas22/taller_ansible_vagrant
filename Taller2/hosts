@@ -2,13 +2,13 @@ all:
   children:
     servidores_web:
       hosts:
-        nombre_de_la_primera_maquina: 
-          ansible_ssh_host: 
-          ansible_ssh_user: 
-          ansible_ssh_private_key_file:
+        serverweb: 
+          ansible_ssh_host: 192.168.122.99 
+          ansible_ssh_user: usuario
+          ansible_ssh_private_key_file: /home/oscar/.ssh/id_rsa
     servidores_bd:
       hosts:
-        nombre_de_la_segunda_maquina: 
-          ansible_ssh_host:
-          ansible_ssh_user:
-          ansible_ssh_private_key_file:
+        serverbd: 
+          ansible_ssh_host: 192.168.122.247
+          ansible_ssh_user: usuario
+          ansible_ssh_private_key_file: /home/oscar/.ssh/id_rsa
